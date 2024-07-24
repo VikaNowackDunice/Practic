@@ -19,3 +19,10 @@ function uniqueNonConsecutiveElements(str){
   const resultat = uniqueNonConsecutiveElements("hello");
   console.log(resultat); // Output: ['h', 'e', 'l', 'o']
   
+ //OR
+
+ function uniqueElements(str){
+  let arr = str.split('').filter((item, index, arr) => index === 0 || item !== arr[index -1])
+  return arr;
+}
+console.log(uniqueElements('hello'))

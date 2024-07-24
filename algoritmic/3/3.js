@@ -7,6 +7,5 @@ function convertToObject(str){
  return Object.fromEntries(str.map((char,i) => [i, char]))// map преобразует массив 
  //символов в массив пар ключ значение 
 }
-let str='ghbfdgdfh'
-let res=convertToObject(str)
+const res=convertToObject('ghbfdgdfh')
 console.log(res)

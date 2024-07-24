@@ -42,9 +42,10 @@ const test2 = {
 } 
 
  function flat(collection, depth = 1){
-  let result = [];
+  let result = []
+
   function flatten(item, currentDepth){
-    if(typeof collection === 'object' && collection !== null){
+    if(typeof item === 'object' && item !== null){
       for( let [key, value] of Object.entries(item)){
         if(typeof value === 'object' && value !== null){
           flatten(value, currentDepth)
@@ -67,6 +68,6 @@ const test2 = {
   flatten(collection, depth);
   return result;
 }
-flat(test) // должно вернуть [1, 2, 3, 4, 5, 11, 9, { one: 1, bar : 'pop', foo: 33, name: 'oleg', olga: true, in: 'in' }, '098', 33, 44, 12, 1, 56]
+console.log(flat(test)) // должно вернуть [1, 2, 3, 4, 5, 11, 9, { one: 1, bar : 'pop', foo: 33, name: 'oleg', olga: true, in: 'in' }, '098', 33, 44, 12, 1, 56]
 
-flat(test2)// вернет {one: 1, bar: 'pop', foo2: 33, name: 'oleg', olga: true, in: 'in', abc: [1, 2, 3, 4, 5, 11, 9, '098', 33, 44, 12, 1, 56]},
+console.log(flat(test2)) // вернет {one: 1, bar: 'pop', foo2: 33, name: 'oleg', olga: true, in: 'in', abc: [1, 2, 3, 4, 5, 11, 9, '098', 33, 44, 12, 1, 56]},

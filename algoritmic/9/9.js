@@ -25,5 +25,5 @@ function getNumberCharacters(str){
   result = result + count + currentChar;
   return result;
 }
-const resu = getNumberCharacters("aaabbcaff");
-console.log(resu);//3a2b1c1a2f
+const getNumber = getNumberCharacters("aaabbcaff");
+console.log(getNumber);//3a2b1c1a2f

@@ -15,17 +15,13 @@ function transformArray(array){
     return result
   }
 }
-let resr =[3, 4, 1, 5 , 2, 2, 1]
+let res =[3, 4, 1, 5 , 2, 2, 1]
 console.log(transformArray(res))//[ 1, 2, 3, 4, 5 ]
 
 //ИЛИ
 function transformArr(array){
   if(Array.isArray(array)){
-    array.sort((a, b)=> a-b)
-
-    let result = array
-    .map((index, item)=> (index ===0 || item !== array[index-1] ? item : null))
-    .filter(item=> item !==null);
+    const result = [...new Set(array)].sort((a, b)=> a-b);
     return result;
   } else {
     throw new Error('err')

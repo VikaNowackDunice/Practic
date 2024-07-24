@@ -60,8 +60,6 @@ function sum(obj, key){
  // чтобы запустить рекурсивный обход.
  return total
 }
-console.log(sum(tree, 'value'))// --> 21
-
-
-sum(tree, 'value') // --> 21
+let res = sum(tree, 'value') 
+console.log(res)// --> 21
 

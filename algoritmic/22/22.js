@@ -7,8 +7,8 @@
 function inc(){
   let a=0;
   return function(){
-    return a++
+    return ++a;
   }
 }
-let d=inc()
-console.log(i())
+let increment = inc();
+console.log(increment(), increment(), increment())

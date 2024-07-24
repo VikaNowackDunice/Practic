@@ -2,15 +2,23 @@
 
 // Напишите свой полифил для [].map()
 
-Array.prototype.myForEach= function (callback, arg){
-  if(this === null || this === window)
+Array.prototype.myMap= function (callback, thisArg){
+  if(this === null)
     throw TypeError('TypeError')
 
-  if(typeof call !== 'function')
+  if(typeof callback !== 'function')
     throw TypeError('TypeError')
+
+  const newArray = [];
 
   for(let i=0; i<this.length; i++){
-    newArr[i] = call.call(arg, this[i], [i], this)
+    newArray[i] = callback.call(thisArg, this[i], i, this)
   }
-  return newArr;
+  return newArray;
 }
+
+const arr = [1, 2, 3];
+let result = arr.myMap(function(item){
+  return item * 2;
+});
+console.log(result);

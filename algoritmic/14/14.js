@@ -7,19 +7,22 @@
 // matchCharacters('кот', 'ком') --> false
 // matchCharacters('аларм', 'малар', 'армал', 'рамал') --> true
 
-function matchCharacters(...args){
-  if(args.length <2) return true;
-  const unicqueLetters = str => [...new Set(str.split(''))];
-  const firstArgsLetters = unicqueLetters(args[0])
-for (let i=0; i<=args.length; i++){
-  const currentArgs = unicqueLetters(args[i])
-  for(const letter of firstArgsLetters){
-    if(!currentArgs.includes(letter)){
-      return false
+function matchCharacters(...args) {
+  if (args.length < 2) return true;
+
+  const uniqueLetters = str => [...new Set(str.split(''))];
+  const firstArgsLetters = uniqueLetters(args[0]);
+
+  for (let i = 1; i < args.length; i++) {
+    const currentArgs = uniqueLetters(args[i]);
+    for (const letter of firstArgsLetters) {
+      if (!currentArgs.includes(letter)) {
+        return false;
+      }
     }
   }
-}
-return true
+  
+  return true;
 }
 console.log(matchCharacters('кот', 'ток', 'окт')); // true
 console.log(matchCharacters('кот', 'ком')); // false
