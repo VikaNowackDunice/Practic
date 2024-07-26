@@ -8,6 +8,8 @@ function reverseFunc(arr){
    if(!Array.isArray(arr)){
    return 'Это не массив';
    }
-   return arr.slice().reverse()// Используем slice() для копии, чтобы не изменить оригинал
+   if(arr.length <= 1) return arr;
+
+   return reverseFunc(arr.slice(1)).concat(arr[0]);
 }
-console.log(reverseFunc(arrayReverse))
+console.log(reverseFunc(arrayReverse));

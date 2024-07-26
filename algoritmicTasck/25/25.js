@@ -10,7 +10,7 @@ function uniqueNonConsecutiveElements(str){
   let result = [str[0]];
     for(i=1; i<str.length; i++){// неачинаем с 1 так как индекс 0 уже добавлен в result
       if(str[i] !== str[i-1]){
-        result.push(str[i])
+        result.push(str[i]);
       }
     }
     return result;
@@ -22,7 +22,7 @@ function uniqueNonConsecutiveElements(str){
  //OR
 
  function uniqueElements(str){
-  let arr = str.split('').filter((item, index, arr) => index === 0 || item !== arr[index -1])
+  let arr = str.split('').filter((item, index, arr) => index === 0 || item !== arr[index -1]);
   return arr;
 }
-console.log(uniqueElements('hello'))
+console.log(uniqueElements('hello'));

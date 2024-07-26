@@ -18,8 +18,8 @@ function getNumberCharacters(str){
        count++;   
       } else {
        result = result + count + currentChar;
-         currentChar = str[i]
-          count = 1
+         currentChar = str[i];
+          count = 1;
       }
   }
   result = result + count + currentChar;

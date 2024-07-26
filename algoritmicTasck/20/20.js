@@ -19,15 +19,12 @@ const objInv= {
 function inverse(obj){
 for(let key in obj){
   if(obj.hasOwnProperty(key)){
-    if(obj[key] === 1){
-       obj[key] = 0;
-    } else if(obj[key] === 0){
-       obj[key]=1;
-    } else if(typeof obj[key] === 'object' && obj[key] !== null){
-       inverse(obj[key])
+    if(typeof obj[key] === 'number') obj[key] = +!obj[key];
+    if(typeof obj[key] === 'object' && obj[key] !== null){
+      inverse(obj[key]);
     }
   }
 }
 }
-inverse(objInv)
+inverse(objInv);
 console.log(objInv);

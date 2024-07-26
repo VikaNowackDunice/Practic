@@ -9,6 +9,6 @@ const arr = [
   { date: '21.12.2002' }
 ];
 
-arr.sort((a, b) => new Date(a.date) -new Date(b.date)) 
- console.log(arr)
+arr.sort((a, b) => new Date(a.date) -new Date(b.date)) ;
+ console.log(arr);
  

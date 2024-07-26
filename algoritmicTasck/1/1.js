@@ -8,7 +8,7 @@
    async function fetchData(url){
     const response = await fetch(url);
     if(response.status !== 200){
-      throw new Error('err')
+      throw new Error('err');
     }
     return response.json();
    }
@@ -16,7 +16,7 @@
  async function fetchRequest(){
   const endPoints = [
     'https://jsonplaceholder.typicode.com/users?name=Leanne%20Graham',
-    'https://jsonplaceholder.typicode.com/todos?user=*V2',
+    'https://jsonplaceholder.typicode.com/todos?userId=*V2',
     'https://jsonplaceholder.typicode.com/todos/*V3'
     ];
 
@@ -24,18 +24,18 @@
       const result = await fetchData(endPoints[0]);
       const userId = result[0].id;
 
-      const todoUrl = endPoints[1].replace('*V2', userId)
-      const todos = await fetchData(todoUrl)
-      const lastTaskId = todos[todos.length-1].id;
+      const todoUrl = endPoints[1].replace('*V2', userId);
+      const todos = await fetchData(todoUrl);
+      const lastTaskId = todos.at(-1).id; //работает как todos[todos.length-1].id
 
-      const lastTasckUrl = endPoints[2].replace('*V3', lastTaskId)
-      const lastTasckUrlDetails = await fetchData(lastTasckUrl)
+      const lastTasckUrl = endPoints[2].replace('*V3', lastTaskId);
+      const lastTasckUrlDetails = await fetchData(lastTasckUrl);
 
       console.log('User:', result[0]);
       console.log('UserId:', userId);
       console.log('Todos:', lastTaskId);
      } catch( error){
-      console.error('error', error)
+      console.error('error', error);
      }
   }
   fetchRequest();

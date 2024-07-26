@@ -6,19 +6,11 @@ const arr=[];
  for(let i=1; i<=50; i++){
    arr.push(i)
    }
- console.log(arr)
+ console.log(arr);
  
 
- const arrTwo = Array.from({length:50}, (_,i)=> ++i)//_ означает что мы пропускаем 
- //первый элемент, так как функция мапер приимает 2 аргумента, 
- //а именно 1ый элем это значение текущего элем, 2щу это индекс текущего элем
+ const arrTwo = Array.from({length:50}, (_,i)=> ++i);
  console.log(arrTwo);
- 
 
-
- // ИЛИ ТАК
- const arrThree = [];
- let i=1;
- arr3=Array(50).fill().map((_, i)=> ++i)// fill заполняет массив в данном случаем 
- //undefined  50 раз
- console.log(arr3)
+ arr3=Array(50).fill().map((_, i)=> ++i);
+ console.log(arr3);

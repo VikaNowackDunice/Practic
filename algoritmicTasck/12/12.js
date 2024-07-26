@@ -4,7 +4,7 @@
 // Пример работы:
 
 function createBoard(heith, width, cellWhite, cellBlack){
-  let arr= [];
+  const arr= [];
           for(let i=1; i<=heith; i++){
               const rowArr=[];
               
@@ -15,7 +15,7 @@ function createBoard(heith, width, cellWhite, cellBlack){
              rowArr.push(cellBlack);
          }
       }
-      arr.push(rowArr)
+      arr.push(rowArr);
   }
   return arr;
 }

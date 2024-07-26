@@ -37,7 +37,7 @@ function allSetled(promises){
         allPromise[index] = value;
         count++;
         if(count === promises.length){
-          resolve(allPromise)
+          resolve(allPromise);
         }
       })
       .catch(error => {
@@ -53,4 +53,4 @@ function allSetled(promises){
   Promise.resolve(3)
   ];
 allSetled(promises).then((results) => console.log(results));
-all(promises).then((results)=> console.log(results)).catch(error => console.error(error))
+all(promises).then((results)=> console.log(results)).catch(error => console.error(error));
