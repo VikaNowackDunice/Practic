@@ -41,7 +41,7 @@ const test2 = {
 };
 
 function flat(collection, depth = 1) {
-  let result = [];
+  const result = [];
 
   function flatten(item, currentDepth) {
     if (Array.isArray(item)) {
