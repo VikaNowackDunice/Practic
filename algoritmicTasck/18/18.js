@@ -13,9 +13,10 @@ function throttle(callback,delay){
 
     setTimeout(()=> {
       isWaiting = false;
-    }, delay)
+    }, delay);
   }
 }
-throttle(console.log('hello'), 1000)
-// каждый раз в какой то интервал отрабатывается какая то функция, 
-// он разрезает вызовы
+const log = throttle(console.log, 1000);
+log('hello');
+log('hello');
+log('hello');

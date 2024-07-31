@@ -18,31 +18,27 @@ const second = [3,5,5,6];
 
 const getMatchedNumbers = (firstArr,secondArr)=>{
   const res = {
-    matched: [],//массив цифр которые одингаковые в двух входных массивов, цифры не повторяются в самом массиве
-    different: [],//массив из цифр которые не одинаковы в двух массивах
+    matched: [],
+    different: [],
   }
-  const set1 = new Set(firstArr)
-  const set2 = new Set(secondArr)
+  const set1 = new Set(firstArr);
+  const set2 = new Set(secondArr);
 
   for(let num of set1){
     if(set2.has(num)){
       res.matched.push(num)
-    }
-  }
-  
-  for (let num of set1) {
-    if (!set2.has(num)) {
+    } else {
       res.different.push(num);
     }
   }
 
   for(let num of set2){
       if(!set1.has(num)){
-      res.different.push(num)
+      res.different.push(num);
     }
   }
   return res;
 }
 
-  let res1 = getMatchedNumbers(first,second)
-  console.log(res1)
+  const res1 = getMatchedNumbers(first,second);
+  console.log(res1);

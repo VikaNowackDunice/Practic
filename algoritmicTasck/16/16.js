@@ -12,22 +12,20 @@
 // очищенный от анаграмм.
 
 // Например
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
-alert( aclean(arr) ); // "nap,teachers,ear" или "PAN,cheaters,era"
+const arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
 // Из каждой группы анаграмм должно остаться только одно слово,
 // не важно какое.
 
 let array = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
  function aclean(arr){
-   let map =new Map()
-   for(i=0; i<arr.length; i++){
-     let sorted = arr[i].toLowerCase().split('').sort().join('');
+   const map = new Map();
+   for(i=0; i < arr.length; i++){
+     const sorted = arr[i].toLowerCase().split('').sort().join('');
      map.set(sorted, arr[i]);
    }
-   return Array.from(map.values())
+   return Array.from(map.values());
  }
-  // "nap,teachers,ear" или "PAN,cheaters,era"
  
- alert( aclean(array) );
+ console.log( aclean(array) );
  

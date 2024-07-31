@@ -4,7 +4,7 @@
 // отсортированный массив и элемент который ищем
 
 function binarySearch(arr, item){
-  arr.sort((a, b)=> a-b)
+  arr.sort((a, b)=> a-b);
   
   let left = 0;
   let rigth = arr.length - 1
@@ -17,13 +17,13 @@ function binarySearch(arr, item){
       }
       
       if(arr[middle] < item){
-          left = middle + 1
+          left = middle + 1;
       } else {
-          rigth = middle - 1
+          rigth = middle - 1;
       }
   }
   return -1;
 }
 
-const result = binarySearch([5,4,32,7,3,2,8], 32)
-console.log(result)
+const result = binarySearch([5,4,32,7,3,2,8], 32);
+console.log(result);

@@ -5,7 +5,7 @@
 // sum(1)(2) -> 3
 
 
-function sum(...args){// Не поняла функцию каррирования
+function sum(...args){
   let currentSum = args.reduce((acc, num) => acc + num, 0);
   function curried(...nextArgs){
     if(nextArgs.length === 0){
@@ -19,6 +19,6 @@ function sum(...args){// Не поняла функцию каррировани
   };
   return curried;
 }
-console.log(sum(1, 4).toString())
-console.log(sum(1)(4).toString())
-console.log(sum(1)(4)(5)(6).toString())
+console.log(sum(1, 4).toString());
+console.log(sum(1)(4).toString());
+console.log(sum(1)(4)(5)(6).toString());

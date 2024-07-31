@@ -19,7 +19,7 @@ function createCopy (data){
       let copy = Array.isArray(obj) ? [] : {};
       for (let key in obj){
         if(obj.hasOwnProperty(key)){
-          copy[key]=deppCopy(obj[key])
+          copy[key]=deppCopy(obj[key]);
         }
       }
       return copy;
@@ -33,4 +33,4 @@ function createCopy (data){
 }
 return copy;
 }
-console.log(createCopy({d:2,f:4, j: {k:4, t:'dfgh'}}))
+console.log(createCopy({d:2,f:4, j: {k:4, t:'dfgh'}}));

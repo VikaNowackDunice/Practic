@@ -39,27 +39,24 @@ const tree = {
 };
 
 function sum(obj, key){
-  let total=0
+  let total=0;
   function recursive(arr){
       if(Array.isArray(arr)){
-          arr.forEach(i=>recursive(i));// используем метод 
-          //forEach для обхода каждого элемента массива 
-          //и вызываем recursiveSum для каждого элемента.
+          arr.forEach(recursive);
       }else if(typeof arr === 'object' && arr !== null){
           for( const k in arr){
               if(k === key && typeof arr[k] === 'number'){
-                  total += arr[k]//Если ключ совпадает с заданным ключом key
-                  // и значение является числом, добавляем это значение к total.
+                  total += arr[k];
+              } else {
+                recursive(arr[k]);
               }
-               recursive(arr[k]);//Рекурсивно вызываем recursiveSum для значения 
-               //текущего ключа, чтобы продолжить обход.
+
           }
       }
   }
- recursive(obj);//Вызываем recursiveSum для начального объекта obj,
- // чтобы запустить рекурсивный обход.
- return total
+ recursive(obj);
+ return total;
 }
-let res = sum(tree, 'value') 
+const res = sum(tree, 'value') 
 console.log(res)// --> 21
 
