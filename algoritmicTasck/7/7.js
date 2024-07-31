@@ -4,21 +4,26 @@
 // sum(1,2) -> 3
 // sum(1)(2) -> 3
 
+function sum(...initialValue) {
+  let totalSum = initialValue.reduce((acc, num) => acc + num, 0);
 
-function sum(...args){
-  let currentSum = args.reduce((acc, num) => acc + num, 0);
-  function curried(...nextArgs){
-    if(nextArgs.length === 0){
-      return currentSum;
+  function addNextValue(...nextValues) {
+    if (nextValues.length > 0) {
+      totalSum += nextValues.reduce((acc, num) => acc + num, 0);
+      return addNextValue;
+    } else {
+      return totalSum;
     }
-    currentSum += nextArgs.reduce((acc, num)=> acc + num, 0);
-    return curried;
   }
-  curried.toString = function(){
-    return currentSum;
+
+  addNextValue.toString = function () {
+    return totalSum;
   };
-  return curried;
+
+  return addNextValue;
 }
-console.log(sum(1, 4).toString());
-console.log(sum(1)(4).toString());
-console.log(sum(1)(4)(5)(6).toString());
+
+console.log(sum(1, 4)()); // 5
+console.log(sum(1)(4)()); // 5
+console.log(sum(1)(4)(5)(6)()); // 16
+console.log(sum(1, 2, 3)(4, 5)()); // 15

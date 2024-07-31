@@ -10,19 +10,19 @@ function getNumberCharacters(str){
   if(str.length === 0){
       return 'Нет символов';
   }
-  let count=1;
-  let result= '';
-  let currentChar=str[0];
-  for(i=1; i<str.length; i++){
-      if(str[i]===currentChar){
+  let count = 1;
+  let result = '';
+  let currentChar = str[0];
+  for(i=1; i < str.length; i++){
+      if(str[i] === currentChar){
        count++;   
       } else {
-       result = result + count + currentChar;
+       result += count + currentChar;
          currentChar = str[i];
           count = 1;
       }
   }
-  result = result + count + currentChar;
+  result += count + currentChar;
   return result;
 }
 const getNumber = getNumberCharacters("aaabbcaff");

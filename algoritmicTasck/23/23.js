@@ -16,7 +16,7 @@
 function createCopy (data){
   function deppCopy(obj){
     if(typeof obj === 'object' && obj !== null){
-      let copy = Array.isArray(obj) ? [] : {};
+      const copy = Array.isArray(obj) ? [] : {};
       for (let key in obj){
         if(obj.hasOwnProperty(key)){
           copy[key]=deppCopy(obj[key]);

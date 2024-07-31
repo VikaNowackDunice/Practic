@@ -3,8 +3,7 @@
 // Написать функцию которая будет принимать строку и возвращать объект 
 
 function convertToObject(str){
-  str=str.split('');
- return Object.fromEntries(str.map((char,i) => [i, char]));
+ return str.split('').reduceRight((acc, char) => ({ [char]: acc }), {});
 }
-const res=convertToObject('ghbfdgdfh');
+const res = convertToObject('abc');
 console.log(res);
