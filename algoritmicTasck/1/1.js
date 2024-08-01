@@ -37,6 +37,6 @@
         lastTaskId: lastTaskId,
       };
      } catch( error){
-      return {error: 'Fetch request failed'}
+      throw new Error(error);
      }
   }

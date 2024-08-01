@@ -4,26 +4,26 @@
 // sum(1,2) -> 3
 // sum(1)(2) -> 3
 
-function sum(...initialValue) {
-  let totalSum = initialValue.reduce((acc, num) => acc + num, 0);
+function sum(...initialValues) {
+  let totalSum = initialValues.reduce((acc, num) => acc + num, 0);
 
   function addNextValue(...nextValues) {
-    if (nextValues.length > 0) {
-      totalSum += nextValues.reduce((acc, num) => acc + num, 0);
-      return addNextValue;
-    } else {
+    if (nextValues.length === 0) {
       return totalSum;
     }
+    totalSum += nextValues.reduce((acc, num) => acc + num, 0);
+    return addNextValue; 
   }
 
-  addNextValue.toString = function () {
+  addNextValue.valueOf = function () {
     return totalSum;
   };
 
   return addNextValue;
 }
 
-console.log(sum(1, 4)()); // 5
-console.log(sum(1)(4)()); // 5
-console.log(sum(1)(4)(5)(6)()); // 16
-console.log(sum(1, 2, 3)(4, 5)()); // 15
+const result = +sum(1, 3);
+const result1 = +sum(1) (3)
+
+console.log(result); 
+console.log(result1);
