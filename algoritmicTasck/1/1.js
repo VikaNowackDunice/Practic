@@ -26,16 +26,17 @@
 
       const todoUrl = endPoints[1].replace('*V2', userId);
       const todos = await fetchData(todoUrl);
-      const lastTaskId = todos.at(-1).id; //работает как todos[todos.length-1].id
+      const lastTaskId = todos.at(-1).id;
 
       const lastTasckUrl = endPoints[2].replace('*V3', lastTaskId);
-      const lastTasckUrlDetails = await fetchData(lastTasckUrl);
+      const lastTasckUrlDetails= await fetchData(lastTasckUrl);
 
-      console.log('User:', result[0]);
-      console.log('UserId:', userId);
-      console.log('Todos:', lastTaskId);
+      return {
+        user: result[0],
+        userId: userId ,
+        lastTaskId: lastTaskId,
+      };
      } catch( error){
-      console.error('error', error);
+      throw new Error(error);
      }
   }
-  fetchRequest();

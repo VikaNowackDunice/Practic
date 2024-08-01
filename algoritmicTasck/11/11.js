@@ -7,7 +7,7 @@ function binarySearch(arr, item){
   arr.sort((a, b)=> a-b);
   
   let left = 0;
-  let rigth = arr.length - 1
+  let rigth = arr.length - 1;
   
   while(left <= rigth){
       const middle = Math.floor((left+rigth)/2);

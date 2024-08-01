@@ -57,6 +57,6 @@ function sum(obj, key){
  recursive(obj);
  return total;
 }
-const res = sum(tree, 'value') 
-console.log(res)// --> 21
+const res = sum(tree, 'value') ;
+console.log(res);
 

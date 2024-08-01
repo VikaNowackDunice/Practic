@@ -53,4 +53,4 @@ function allSetled(promises){
   Promise.resolve(3)
   ];
 allSetled(promises).then((results) => console.log(results));
-all(promises).then((results)=> console.log(results)).catch(error => console.error(error));
+all(promises).then((console.log)).catch((console.error));

@@ -7,7 +7,7 @@
 
 function uniqueNonConsecutiveElements(str){
   if(str.length === 0) return [];
-  let result = [str[0]];
+  const result = [str[0]];
     for(i=1; i<str.length; i++){// неачинаем с 1 так как индекс 0 уже добавлен в result
       if(str[i] !== str[i-1]){
         result.push(str[i]);

@@ -5,7 +5,7 @@
 function transformArray(array){
   if(Array.isArray(array)){
     array.sort((a, b)=> a-b);
-    let result = [array[0]];
+    const result = [array[0]];
 
     for(i =1; i<array.length; i++){
       if(array[i] !== array[i-1]){
